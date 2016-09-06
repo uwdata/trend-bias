@@ -40,7 +40,7 @@
 % Paper metadata (use plain text, for PDF inclusion and later
 % re-using, if desired).  Use \emtpyauthor when submitting for review
 % so you remain anonymous.
-\def\plaintitle{Visual Estimation of Trend in Bivariate Visualizations}
+\def\plaintitle{Visual Estimation of Trend in Scatterplot Visualizations}
 \def\plainauthor{Removed for Review}
 \def\emptyauthor{}
 \def\plainkeywords{Information Visualization, Graphical Perception, Regression}
@@ -107,7 +107,7 @@
 \maketitle
 
 \begin{abstract}
-Observing trends in bivariate data, or predicting the future values of data, is a common task for viewers of visualizations. Yet, designs do not always explicitly draw trend lines and other relevant statistical modeling information in charts. Thus, viewers must often perform regression “by eye:” they estimate the trend of data through the values alone. Different design choices may aid or hamper this ability to estimate trends in data. In this work, we present a series of crowd-sourced experiments examining regression by eye, investigating both viewer performance at estimation of trends in bivariate data, and potential sources of bias in these estimations. Our findings indicate that viewers can accurately and robustly estimate trends in bivariate visualizations, but that certain features of both the data and the visual design of the visualization (such as outliers, asymmetry, and trend complexity) can negatively impact this accuracy.
+Observing trends in bivariate data, or predicting the future values of data, is a common task for viewers of visualizations. Yet, designer do not always explicitly include trend lines and other relevant statistical modeling information in charts. Thus, viewers must often perform \emph{regression by eye} --- they estimate the trend of data through the values alone. If viewer performance at this task is sufficiently poor, or if certain designs introduce unacceptable bias, then designers will need to rethink how to communicate trends to the general audience. In this work, we present a series of crowd-sourced experiments examining regression by eye, investigating both viewer performance at estimation of trends in bivariate data, and potential sources of bias in these estimations. Our findings indicate that, while viewers can accurately estimate trends in many standard visualizations of bivariate data, certain visual designs (such as the visual asymmetry of area charts) and certain features of the data (such as the presence of outliers) result in visual estimations that do not align with basic statistical models of regression.
 \end{abstract}
 
 \category{H.5.m.}{Information Interfaces and Presentation
@@ -119,6 +119,39 @@ Observing trends in bivariate data, or predicting the future values of data, is 
 
 
 
+\section{Related Work}
+
+\section{General Methods}
+
+In order to assess the ability of viewers of visualizations to perform regression-by-eye, we conducted a series of three crowd-sourced experiments on Amazon's Mechanical Turk platform. We limited the participant pool to subjects from within the United States, with a prior task approval rating of at least 90\%. For all experiments, we included stimuli where the trend line was visible as attention checks and for validation. We excluded participants with poor performance on these stimuli. Based on timings from internal piloting, we paid each participant \$2 for their participation, for an intended rate of \$8/hour. 
+
+We generated the scatterplots by first generating the horizontal position of points through banded Monte Carlo sampling, ensuring that, while the distribution of points in X appeared uniform, at least X/b points appear in each of the b bands. We performed rejection sampling to ensure that no two points overlapped by more than half their radius in the resulting 600x1050 image. Next, we created a set of residual values, sampled evenly from discretized gaussian. This procedure ensured that the actual and intended bandwidth and standard deviation of residual values is precise. This set was permuted, and then applied to the points along with a target linear trend. Heteroskedasticity introduced through permutation could alter the actual linear trend away from the target trend, and so, we performed rejection sampling to ensure that the trend of the resulting points were within $10^{-7}$ of the target trend. We reused this residuals across all different trend types (linear, quadratic, or trigonometric). Except where noted, we selected trend lines that were centered in the image: that is, for a vertical and horizontal data extent of $[0,1]$, $f(0.5) = 0.5$.
+
+\subsection{Participants}
+
+
+\section{Estimation of Slope is Reliable \\ Across Visualizations}
+
+We presented participants with a series of scatterplots, and adjusted a slider to fit the perceived trend in the points. Scatterplots consisted of one of three types of trend (linear, quadratic, or trigonometric). For each scatterplot, participants adjusted a slider that controlled the slope of a rendered trend line (or, in the case of the quadratic trends, the curvature, or the trigonometric, the positive/negative amplitude).
+
+
+\subsection{Hypotheses}
+\subsection{Results}
+\subsection{Discussion}
+
+\section{Estimation of Intercept is Subject to \\ ``Within The Bar'' Bias}
+\subsection{Hypotheses}
+\subsection{Results}
+\subsection{Discussion}
+
+\section{Estimation of Slope is Sensitive to Outliers}
+\subsection{Hypotheses}
+\subsection{Results}
+\subsection{Discussion}
+
+\section{Discussion}
+\subsection{Limitations \& Future Work}
+\subsection{Conclusion}
 \section{Acknowledgments}
 
 Omitted for review.
