@@ -2,9 +2,20 @@
   \begin{figure}
   \centering
   \includegraphics[width=.55\columnwidth]{figures/exp4}
-  \caption{An example stimulus from experiment 3. We replaced the final 10 points of this dataset with extreme values. The overlaid green trend line represents a robust fit (ignoring the outlier values), while the overlaid orange line represents the standard OLS fit with all points included. The purple line represents the average participant response on this stimulus. In general, participants' estimates of trend lines were closer to the robust than the non-robust trend; regression by eye tends to underweight outliers compared to OLS.}
+  \caption{An example stimulus from experiment 3. We replaced the final 10 points of this dataset with extreme values. The overlaid green trend line represents a robust fit (ignoring the outlier values), while the overlaid orange line represents the standard OLS fit with all points included. The purple line represents the average participant response on this stimulus. In general, participants' estimates of trend lines were closer to the robust than the non-robust trend; regression by eye tends to downweight outliers compared to OLS.}
   \label{fig:outlier}
   \end{figure}
+}
+
+
+
+\newcommand{\outliersFig}{
+	\begin{figure}
+		\centering
+		\includegraphics[width=.95\columnwidth]{figures/outliers}
+		\caption{The four different outlier numerosities tested in experiment three. The overlaid green trend line represents a robust fit (ignoring the outlier values), while the overlaid orange line represents the standard OLS fit with all points included. More outliers results in larger divergence between these two types of fit.}
+		\label{fig:outliers}
+	\end{figure}
 }
 
 \newcommand{\expFig}{
@@ -29,8 +40,17 @@
 	\begin{figure}
 		\centering
 		\includegraphics[width=.95\columnwidth]{figures/sigmas}
-		\caption{The effect of increasing residual bandwidth on stimuli. We produced stimuli by creating points on a target trend line (in this case, $f(x) = -0.2x + 0.6$), and then adding residuals drawn evenly from a gaussian with a given bandwidth $\sigma$. Larger bandwidths mean more dispersion and so weaker fits.}
+		\caption{The four different Gaussian bandwidths used to generate residuals in this study. We produced stimuli by creating points on a target trend line (in this case, $f(x) = -0.2x + 0.6$), and then adding residuals drawn evenly from a Gaussian with a given bandwidth $\sigma$. Larger bandwidths mean more dispersion and so weaker fits.}
 		\label{fig:sigmas}
+	\end{figure}
+}
+
+\newcommand{\trendtypesFig}{
+	\begin{figure}
+		\centering
+		\includegraphics[width=.85\columnwidth]{figures/trendtypes}
+		\caption{The three different trend types in this study: linear, quadratic, and trigonometric trends. In experiments 1, participants estimated the slope of the linear fits, curvature of the quadratic fits, and amplitude of the trigonometric fits. In experiment 2, they estimated the y-intercept of these fits. In experiment 3, they estimated only the slope of linear fits. Trend lines are displayed here for reference. }
+		\label{fig:trendtypes}
 	\end{figure}
 }
 
@@ -43,11 +63,20 @@
 	\end{figure}
 }
 
+\newcommand{\expOnetypesFig}{
+	\begin{figure}
+		\centering
+		\includegraphics[width=.85\columnwidth]{figures/exp1types}
+		\caption{From experiment 1, the effect of different trend types on error. See Fig. \protect\ref{fig:trendtypes} for example stimuli at each factor level. Despite the differing complexity of these types of fit, participant estimates were similar, indicating that regression by eye is capable of non-linear estimates. Confidence intervals represent bootstrapped 95\% c.i.s of interquartile mean. }
+		\label{fig:exp1types}
+	\end{figure}
+}
+
 \newcommand{\typesFig}{
 	\begin{figure}
 		\centering
 		\includegraphics[width=.95\columnwidth]{figures/types}
-		\caption{The three types of bivariate visualizations explored in this work: area charts, line charts, and scatterplots. The density of points made bar charts and area charts extremely visually similar, and so they were excluded from our experiments. Likewise, the error in estimating trends from heatmaps\protect\cite{fuchs2013evaluation} made them unsuitable for the experimental task.}
+		\caption{The three types of bivariate visualizations explored in this work: scatterplots, linegraphs, and area charts. The density of points made bar charts and area charts extremely visually similar, and so bar charts were excluded from our experiments. Likewise, the error in estimating trends from heatmaps\protect\cite{fuchs2013evaluation} made them unsuitable for the experimental task.}
 		\label{fig:types}
 	\end{figure}
 }
@@ -58,5 +87,14 @@
 		\includegraphics[width=.85\columnwidth]{figures/exp2types}
 		\caption{From experiment 2, the effect of chart type on signed error. See Fig. \protect\ref{fig:sigmas} for example stimuli at each factor level. Area charts are visually asymmetric, with the area below the line filled in with a color. This visual asymmetry results in a form of within-the-bar bias\protect\cite{newman2012bar}, where values in the filled region are perceived as likelier than values outside of it. This bias manifests as a consistent underestimation in the intercept of trend lines. Other chart types we examined do not have this bias. Confidence intervals represent bootstrapped 95\% c.i.s of interquartile mean. }
 		\label{fig:exp2types}
+	\end{figure}
+}
+
+\newcommand{\expThreeOutliersFig}{
+	\begin{figure}
+		\centering
+		\includegraphics[width=.95\columnwidth]{figures/exp3outliers}
+		\caption{From experiment 3, the effect of numerosity of outliers on absolute error. See Fig. \protect\ref{fig:outliers} for example stimuli at each factor level. As the number of outliers increases, there is increasing divergence between the robust line of best fit (which ignores outliers), and the standard OLS line of best fit (which is sensitive to outliers). Estimates become increasingly dissimilar to the OLS fit, indicating that participants downweight of outliers when making estimates of trend. However, the increasing error even from the robust trend line indicates that participants still perform some interpolation between the two types of fits. Confidence intervals represent bootstrapped 95\% c.i.s of interquartile mean. }
+		\label{fig:exp3outliers}
 	\end{figure}
 }
