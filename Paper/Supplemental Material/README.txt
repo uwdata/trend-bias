@@ -1,8 +1,9 @@
 
-This supplemental material is for review purposes only. “Living” versions of the experiments discussed in this paper, along with all stimuli, anonymous data, and analyses, are available in a github repository that we have excluded for reasons of anonymity. We did not include all experimental stimuli for reasons of space (the stimuli for experiment 1, for instance, require 84 MB of space). We have provided several sets of example stimuli in the paper proper.
+This supplemental material is for review purposes only. “Living” versions of the experiments discussed in this paper, along with all stimuli, anonymous data, and analyses, are available in a github repository that we have excluded for reasons of anonymity. We did not include all experimental stimuli for reasons of space (the stimuli for experiment 1, for instance, require 84 MB of space). We have provided several sets of example stimuli in the paper proper, and include code for generating similar stimuli.
+
+MonteCarloPoints.pde is a Processing 3.2.1 sketch we used for generating stimuli for this experiment. As the procedure relies on randomness we assign residuals, stimuli will not be identical from run to run, but will embody the required factor levels. MonteCarloPoints requires the apache math commons 3 library.
 
 exp1.csv, exp2.csv, and exp3.csv correspond to the data from the three experiments presented in the paper. We anonymized the data by replacing the Mechanical Turk WorkerID with an integer. We collected demographics information from participants after they completed the main experimental task. This data is stored in demographics.csv.
-
 
 Column Key for exp1.csv, exp2.csv, exp3.csv:
 
