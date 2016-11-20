@@ -1,4 +1,4 @@
-We thank the reviewers for their thoughtful feedback. We hope to present this work at CHI, and believe that addressing the issues raised in the reviews will make the work a stronger submission with greater utility. If accepted (in addition to other, more minor changes suggested by the reviewers), as per the meta-review we will revise three key areas:
+We thank the reviewers for their thoughtful feedback. We hope to present this work at CHI, and believe that addressing the issues raised in the reviews will make the work a stronger submission. If accepted (in addition to other, more minor changes suggested by the reviewers), as per the meta-review we will revise three key areas:
 
 1) Clarification of the statistical methods:
 
@@ -10,42 +10,37 @@ Bootstrapped CIs appear frequently in graphical perception work [8, 17, 29]. Pri
 Midmeans (aka Interquartile Means, or IQMs):
 Prior work [8, 17] indeed uses "the means of the midmeans of the log absolute errors" in charts, including Fig. 16 in [8] (which R3 correctly cites as a model for figures in our paper). R3 notes some disadvantages of IQMs: the distribution of such values tends to violate the assumptions of normality of sampling error, which is key for t-tests and ANOVAs. In the paper, we use IQMs only for plots and for reporting effect sizes; for ANOVAs and other inferential tests, we use standard means. We will clarify this distinction in the paper.
 
-While we reiterate that the p-values reported in the paper come from standard means (not IQMs), it is true that IQMs reduce the variance of the variables of interest, and so may artificially inflate effect sizes or create effects unseen with other measures of central tendency. In response to this concern, we generated CIs using a more standard approach: a two-tailed 95% t-confidence interval of the standard mean. While these CIs result in smaller effect sizes (due to higher variance), they do not alter any of the main results of the paper.
+While we reiterate that the p-values reported in the paper come from standard means (not IQMs), IQMs have tend to have lower variance than standard means, and so may inflate effect sizes compared with other measures of central tendency. In response to this concern, we generated two-tailed 95% t-confidence intervals of the standard mean. These new CIs do not alter the main results of the paper.
 
-Figure 6 becomes:
-sigma, mean(absolute error) +/- 95%t-ci
+Fig 6 becomes:
+sigma, mean(absolute error)+/-95%t-ci
 0.05,  0.04 +/- (0.004)
 0.10,  0.10 +/- (0.005)
 0.15,  0.15 +/- (0.006)
 0.20,  0.23 +/- (0.01)
 
-Figure 8 becomes:
-graph type, mean(error) +/- 95%t-ci
+Fig 8 becomes:
+graph type, mean(error)+/-95%t-ci
 area,  -0.01 +/- (0.006)
 line,  0.01 +/- (0.005)
 scatterplot, 0.005 +/- (0.003)
 
-Figure 11 becomes:
-error type, mean(absolute error) +/- 95%t-ci
+Fig 11 becomes:
+error type, mean(absolute error)+/-95%t-ci
 w/r/t OLS fit, 0.4 +/- 0.009
 w/r/t robust fit, 0.15 +/- 0.007
 no outliers, 0.1 +/- 0.006
 
-...and so on. While estimates are noisier under this procedure, the results remain unchanged: monotonic increase in error as residuals get larger, “within-the-bar bias” underestimation in area charts but not other chart types, participants are closer to the robust fit than the OLS fit, etc.
+...and so on. While effect sizes are smaller, the results remain unchanged: increase in error as residuals get larger, “within-the-bar bias” underestimation in area charts, estimations closer to the robust fit than the OLS fit, etc.
 
 2) Additional detail about experimental methods:
 
-We will include or clarify study details asked for by reviewers, including the number of exclusions, and re-structuring of the methods section to make the participant information clearer.
+We will include or clarify study details asked for by reviewers, including the number of exclusions, and re-structuring of the methods section to make the participant information clearer. Though we did submit our study data as a supplement, on acceptance, we would make public our full repository containing data tables, analyses, experimental stimuli, and instruments.
 
-Additionally, though we did submit our study data as supplemental material, on acceptance, we would make public our full (currently private) repository containing not only data tables and analyses, but also experimental stimuli and instruments. In the main body of the paper, we will add figures with more example stimuli. We can also include additional figures (such as violin plots of per-subject IQMs, or other non-parametric visualizations of effect size) in the online supplement.
+As an alternative study design, both R4 and R5 mention un-constrained input of trend lines (which we had also initially considered). Our design is more concerned with fitting a given model (linear or otherwise) than a freeform "sketch" of a fit, which may or may not correspond to any of the categories of provided models -- and may also suffer from additional noise such as drawing "jitter" or "satisficing" by subjects due to the higher cost of revising drawings. For the targeted research questions in our study, we believe our more parsimonious study design is justified. However, we know of others actively researching the design of experimentally tractable freeform solicitation techniques (e.g., the “draw your guess” NYT example mentioned by R5). We will clarify the distinction between these types of task, citing work in this area that has been published since our submission.
 
-As an alternative to our study design, both R4 and R5 mention un-constrained input of trend lines (which we had also initially considered). Our design is more concerned with fitting a given model (linear or otherwise) than a freeform "sketch" of a fit, which may or may not correspond to any of the categories of provided models -- and may also suffer from additional noise such as drawing "jitter" or "satisficing" by subjects due to the higher cost of revising drawings. For the targeted research questions in our study, we believe our more parsimonious study design is justified. However, we know of others actively researching the design and implementation of experimentally tractable freeform solicitation techniques (for instance, the “draw your guess” NYT example mentioned by R5). We will clarify the distinction between these two types of visual regression, citing work in this area that has been published since our initial submission.
+3) Better situate the work in the CHI community:
 
-3) Better situate the work in the CHI community, and better communicate its utility:
-
-While many graphical perception works have had a welcome reception at CHI (e.g., [10, 17]), we believe that we can improve the perceived fit of this work at CHI (as per R5) through the inclusion of an explicit implications for design subsection of the conclusion. We believe our results offer guidance to designers in information visualization. In particular, they suggest that area charts (which are a common encoding for time series data) have unanticipated downsides when attempting to convey temporal trends. Similarly, they suggest that standard trend lines (which are OLS lines by default in programs like Excel and other common analysis tools) may not appear to be credible if there are many outliers in the data; in such cases, it appears that viewers can be trusted to perform the robust fits visually.
-
-This issue of trust in the viewer (or the stats!) to be "well behaved" when it comes to estimating statistical properties, or making use of visualizations, is central to how we developed our research questions for this paper, and we will expand upon it in our introduction (particular our Anscombe quartet example, as per R5), and in scoping our claimed contributions.
-
+While many graphical perception works have had a welcome reception at CHI (e.g., [10, 17]), we believe that we can improve the perceived fit of this work at CHI (as per R5) through the inclusion of an implications for design subsection of the conclusion. We believe our results offer guidance to designers in visualization. In particular, they suggest that area charts (a common encoding for time series data) have unanticipated downsides when attempting to convey temporal trends. Similarly, they suggest that standard trend lines (which are OLS lines by default in programs like Excel and other common analysis tools) may not appear credible if there are many outliers in the data; in such cases, viewers could be trusted to perform the robust fits visually.
 
 We hope our rebuttal addresses the main reviewer concerns, and would like to thank the reviewers again for their helpful and thorough comments. As the revisions we propose above largely concern argumentation and presentation issues, we are confident that we can carry them out within the CHI revision cycle.
