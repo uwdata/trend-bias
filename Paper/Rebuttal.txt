@@ -14,16 +14,16 @@ While we reiterate that the p-values reported in the paper come from standard me
 
 Fig 6 becomes:
 sigma, mean(absolute error)+/-95%t-ci
-0.05,  0.04 +/- (0.004)
-0.10,  0.10 +/- (0.005)
-0.15,  0.15 +/- (0.006)
-0.20,  0.23 +/- (0.01)
+0.05,  0.04 +/- 0.004
+0.10,  0.10 +/- 0.005
+0.15,  0.15 +/- 0.006
+0.20,  0.23 +/- 0.01
 
 Fig 8 becomes:
 graph type, mean(error)+/-95%t-ci
-area,  -0.01 +/- (0.006)
-line,  0.01 +/- (0.005)
-scatterplot, 0.005 +/- (0.003)
+area,  -0.01 +/- 0.006
+line,  0.01 +/- 0.005
+scatterplot, 0.005 +/- 0.003
 
 Fig 11 becomes:
 error type, mean(absolute error)+/-95%t-ci
