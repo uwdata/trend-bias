@@ -1,0 +1,12 @@
+In addition to minor changes to the paper, we have made the following more substantial changes, as per the reviewer comments:
+
+1) As part of the de-anonymizing process, we added a link to a  public repository containing study materials and data tables.
+
+2) We justified and clarified our use of interquartile means in our statistical analyses.
+
+3) We justified our study instruments, contrasting our methods with ongoing work in free-form drawing and solicitations in information visualization.
+
+4) We restructured the methods section to make certain information (e.g. exclusions, and participant information) clearer, and easier to interpret.
+
+5) We included an “implications for design” subsection, explicitly enumerating how designers might make use of the conclusions we draw in our experiment.
+
